@@ -23,17 +23,16 @@ public class MySimpleResponse extends AbstractSimpleResponse {
 			sendHeader();
 		}
 		if (headerSend == true) { // Wenn Header gesendet, dann sende auch Body
-			System.out.println("Header wurde gesendet, nun Body");
+			System.out.println("Header gesendet, Body gesendet");
 			out.println(string);
 			out.flush();
 		} else {
-			System.out.println("Header NICHT gesendet");
+			System.out.println("Header und Body >nicht< gesendet");
 		}
 
 	}
 
 	@Override
-	// Header der Respinse senden
 	public void sendHeader() throws IOException {
 		
 		if (headerSend == false) {
@@ -49,16 +48,9 @@ public class MySimpleResponse extends AbstractSimpleResponse {
 										// tatsächlich ein Content-Type
 										// ermittelt wurde
 			out.write(("Content-Type: " + this.contentType.getContentString() + "\r\n" + "\r\n").getBytes());
-			System.out.println("Content-Type: "
-					+ this.contentType.getContentString() + ", utf-8");
+			System.out.println("Content-Type: " + this.contentType.getContentString() + ", utf-8");
 		}
-		// System.out.println zur Kontrolle, ob Header formal richtig ist
-		//out.println(); // Doppelter Linebreak, signalisiert Ende des Headers,
-						// beginn des Body
-		//out.flush(); // flush() sendet Daten in Output Stream
-
-		headerSend = true; // Kontrollvariable, um zu prüfen ob Header schon
-							// gesendet wurde
+		headerSend = true;
 		}
 	}
 
