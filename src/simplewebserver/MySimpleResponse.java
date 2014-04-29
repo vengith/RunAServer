@@ -24,8 +24,8 @@ public class MySimpleResponse extends AbstractSimpleResponse {
 		}
 		if (headerSend == true) { // Wenn Header gesendet, dann sende auch Body
 			System.out.println("Header wurde gesendet, nun Body");
-			out.write(string.getBytes());
-			//out.flush();
+			out.println(string);
+			out.flush();
 		} else {
 			System.out.println("Header NICHT gesendet");
 		}

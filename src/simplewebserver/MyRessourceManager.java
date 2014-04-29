@@ -54,9 +54,10 @@ public class MyRessourceManager implements RessourceManager {
 			System.out
 					.println("Weder Datei noch Verzeichnis oder existiert nicht");
 			response.setHttpStatus(HttpStatus.NOT_FOUND);
+			response.setContentType(ContentType.HTML);
 			response.sendHeader();
-			response.addToBody("<!DOCTYPE HTML> \n <html> <body> <img src=\"http://404-found.ru/wp-content/uploads/2011/02/404-2.png\"></body> </html>");
-			response.getOutputStream().close();
+			response.addToBody("<!DOCTYPE HTML> \n <html> <body> <img src=\"http://www.thinktraining.ca/portals/0/404_man.jpg\"></body> </html>");
+			response.close();
 		}
 	}
 
