@@ -67,7 +67,7 @@ public class MyRessourceManager implements RessourceManager {
 
 		// Wenn Request Typ GET ist delegierung an doGet()
 		if (request.getRequestType().equals(HttpCommand.GET) == true) {
-			System.out.println("Ist vom Typ GET");
+			System.out.println("Ist GET");
 			response.setHttpStatus(HttpStatus.OK);
 			doGet(request, response);
 		} else { // Wenn keine GET Request
@@ -89,35 +89,35 @@ public class MyRessourceManager implements RessourceManager {
 
 		switch (a) {
 		case "TXT":
-			System.out.println("Vom Typ TXT");
+			System.out.println("TXT");
 			response.setContentType(ContentType.TEXT);
 			break;
 		case "HTML":
-			System.out.println("Vom Typ HTML");
+			System.out.println("HTML");
 			response.setContentType(ContentType.HTML);
 			break;
 		case "MP3":
-			System.out.println("Vom Typ MP3");
+			System.out.println("MP3");
 			response.setContentType(ContentType.MP3);
 			break;
 		case "MP4":
-			System.out.println("Vom Typ MP4");
+			System.out.println("MP4");
 			response.setContentType(ContentType.MP4);
 			break;
 		case "JPG":
-			System.out.println("Vom Typ JPG");
+			System.out.println("JPG");
 			response.setContentType(ContentType.JPEG);
 			break;
 		case "GIF":
-			System.out.println("Vom Typ GIF");
+			System.out.println("GIF");
 			response.setContentType(ContentType.GIF);
 			break;
 		case "PNG":
-			System.out.println("Vom Typ PNG");
+			System.out.println("PNG");
 			response.setContentType(ContentType.PNG);
 			break;
 		case "ICO":
-			System.out.println("Vom Typ ICO");
+			System.out.println("ICO");
 			response.setContentType(ContentType.ICO);
 			break;
 		default:
@@ -209,7 +209,7 @@ public class MyRessourceManager implements RessourceManager {
 		htmlstringbuilder
 				.append("<p><a href=\"./\"><button type=\"button\">Root-Directory</button></a> </p></header> \n");
 		htmlstringbuilder
-				.append("<table> \n <thead> \n <tr> <th>Datei</th> \n </thead> \n <tbody> \n");  //<th>Groesse</th> <th>Typ</th> <th>Zuletzt Geaendert</th> </tr>
+				.append("<table> \n <thead> \n <tr> <th>Datei</th> \n </thead> \n <tbody> \n");
 
 		// Schreiben der Links zu den Dateien/Ordnern des Verzeichnisses in HTML
 		for (int i = 0; i < farr.length; i++) {
