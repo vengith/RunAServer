@@ -180,19 +180,6 @@ public class MyRessourceManager implements RessourceManager {
 			return "Ordner";
 	}
 
-	// Gibt die Dateigroesse aus
-//	protected static float Dateigroesse(String Pfad) {
-//		File groesse = new File(Pfad);
-//		return groesse.length() / 1024;
-//	}
-
-	// Gibt zuletzt geandert aus
-//	protected static String zuletztGeandert(String Pfad) {
-//		File datum = new File(Pfad);
-//		SimpleDateFormat dat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
-//		return dat.format(datum.lastModified());
-//	}
-
 	@Override
 	public void copyStreams(InputStream in, OutputStream out)
 			throws IOException {
@@ -214,10 +201,9 @@ public class MyRessourceManager implements RessourceManager {
 		// Stringbuilder um HTML Seite zu bauen
 		StringBuilder htmlstringbuilder = new StringBuilder();
 		htmlstringbuilder
-				.append("<!DOCTYPE HTML> \n <html> \n <head>  <link rel=\"icon\"  href=\"favicon.ico\" /> \n <title>Run A Server</title> \n <meta name=\"author\" content=\"Alex, Fabi, Yannick\">  \n ");
+				.append("<!DOCTYPE HTML> \n <html> \n <head>  <link rel=\"icon\"  href=\"favicon.ico\" /> \n <title>Run A Server</title> \n <meta name=\"author\" content=\"   \">  \n ");
 		htmlstringbuilder
 				.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\"/> </head> \n");
-		// htmlstringbuilder.append("<style type=\"text/css\"> * {font-family: sans-serif;margin:0; padding:0;} h1, h2, p {padding:0.5rem;} header { display:block; background-color:#D0DAFD; color: #039;margin-top: 1em;} #wrapper {width: 800px; margin: 0px auto;} table {width: 100%; border-collapse: collapse;} td, th {padding: 0.5rem;text-align: left;} th {background-color: #D0DAFD;border-top: 4px solid #AABCFE;border-bottom: 2px solid #FFF;color: #039;} tr:hover td {background-color: #D0DAFD;color: #339;} td {background-color:#E8EDFF;border-bottom: 2px solid #FFF;color: #669;border-top: 1px solid transparent;} tr:nth-child(even) {background-color: white;} tr:nth-child(odd) {background-color: red;} a:link,a:visited,a:hover,a:active{color:#339;text-decoration: none;}</style> \n");
 		htmlstringbuilder
 				.append("<body> \n <div id=\"wrapper\"> \n <header> \n <h1>Simple Web-Server</h1> \n");
 		htmlstringbuilder
@@ -233,9 +219,6 @@ public class MyRessourceManager implements RessourceManager {
 			htmlstringbuilder.append("<tr> <td> <a href='"
 					+ path[1].substring(1).replace('\\', '/')
 							.replace(" ", "%20") + "'>" + f.getName());
-					//+ "</a></td><td>" + Dateigroesse(f.getAbsolutePath())
-					//+ " KB</td> <td>" + Dateityp(f.getName()) + " </td> <td> \n");
-					//+ zuletztGeandert(f.getAbsolutePath()) + " </td> </tr> \n");
 		}
 
 		htmlstringbuilder.append("<tbody> </table> \n"
