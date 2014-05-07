@@ -34,11 +34,11 @@ public class MyRessourceManager implements RessourceManager {
 		// Wenn RessourceURI = '/', dann Root
 		if (request.getRessourceURI().equals("/")) {
 			f = new File(root.replace('\\', '/'));
-			System.out.println("Ist: / -> ROOT");
+			System.out.println("Ist: ROOT");
 			System.out.println(f);
 		} else { // Sonst Root + RessourceURI
 			f = new File(root.replace('\\', '/'), request.getRessourceURI());
-			System.out.println("Ist nicht  /");
+			System.out.println("Ist nicht ROOT");
 			System.out.println(f);
 		}
 
@@ -194,8 +194,7 @@ public class MyRessourceManager implements RessourceManager {
 		response.setContentType(ContentType.HTML);
 		response.sendHeader();
 
-		// Array, in dem Dateien und Ordner des Verzeichnisses gespeichert
-		// werden
+		// Array, in dem Dateien und Ordner des Verzeichnisses gespeichert werden
 		File[] farr = file.listFiles();
 
 		// Stringbuilder um HTML Seite zu bauen
